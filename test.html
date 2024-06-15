@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+    <style type="text/css">
+    	a.thumb{
+    		display: inline-block;
+    	}
+    	.thumb img{
+    		height: 50px;    		
+    	}
+    </style>    	
+</head>
+<body>
+	<section id="profiles" class="page">
+		<div class="container">
+			<div class="container-fluid">
+				<div class="row" id="profile-grid">
+					<div class="col-md-12 col-xs-12 profile">
+			          	<a href="#" class="thumb">
+			          		<img src="//dummyimage.com/900x350.png/c0c0c0&amp;text=image0x201" class="img-responsive img-rounded" data-toggle="modal" data-target=".modal-profile-lg">
+			          	</a>
+			          	<a href="#" class="thumb">
+			          		<img src="//dummyimage.com/900x350.png/c0c0c0&amp;text=image0x202" class="img-responsive img-rounded" data-toggle="modal" data-target=".modal-profile-lg">
+			          	</a>
+			          	<a href="#" class="thumb">
+			          		<img src="//dummyimage.com/900x350.png/c0c0c0&amp;text=image0x203" class="img-responsive img-rounded" data-toggle="modal" data-target=".modal-profile-lg">
+			          	</a>
+			          	<a href="#" class="thumb">
+			          		<img src="//dummyimage.com/900x350.png/c0c0c0&amp;text=image0x204" class="img-responsive img-rounded" data-toggle="modal" data-target=".modal-profile-lg">
+			          	</a>
+				    </div>
+				 </div>
+			</div>
+		</div>
+	</section>
+		
+	<!-- .modal-profile -->
+	<div class="modal fade modal-profile" tabindex="-1" role="dialog" aria-labelledby="modalProfile" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button class="close" type="button" data-dismiss="modal">×</button>
+					<h3 class="modal-title"></h3>
+				</div>
+				<div class="modal-body">
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //.modal-profile -->
+
+
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>  
+	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+		/* show lightbox when clicking a thumbnail */
+		    $('a.thumb').click(function(event){
+		    	event.preventDefault();
+		    	var content = $('.modal-body');
+		    	content.empty();
+		      	/*var title = $(this).attr("title");
+		      	$('.modal-title').html(title);      	*/
+		      	content.html($(this).html());
+		      	$(".modal-profile").modal({show:true});
+		    });
+
+		  });
+	</script>
+</body>
+</html>
